@@ -15,10 +15,51 @@
 .navbar ul li a{
     text-decoration: none;
 }
+.body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .container {
     background-color: #ffff;
     width: 380px;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: ;
+    box-shadow:0 10px 25px rgba(0, 0, 0, 0.2) ;
+    margin: auto;
+}
+.container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+
+}
+.form-group{
+    margin-bottom: 15px;
+}
+.form-group input{
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: auto;
+    margin-bottom: 10px;
+    display: block;
+}
+.form-group button{
+    width: 40%;
+    padding: 9px;
+    background-color: #4e73df;
+    border: none;
+    border-radius: 5px;
+    color: #ffff;
+    font-size: 16px;
+    cursor: pointer;
+    margin: auto;
+    display: block;
+
+}
+.login-link{
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
 }

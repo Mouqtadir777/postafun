@@ -13,16 +13,16 @@
 
     <form action="#" method="post">
         <div class="form-group">
-            <label for="nom">Nom d'utilisateur</label>
-            <input type="text" id= "nom" name="nom">
+            <input type="text" placeholder="Nom " require >
+            <input type="text" placeholder="Prénom" require >
+            <input type="text" placeholder=" Date de naissance"  require>
+            <input type="text" placeholder="Mot de passe " require >
+            <input type="text" placeholder="Confirmer mot de passe"  require>
+            <button type="submit">S'inscrire</button>
         </div>
-         <div>
-            <label for="password">Mot de passe</label>
-            <input type="text" id="mdp" name="mdp">
-        </div>
+        
 
-        <button type="submit">S'inscrire</button>
-        <p class="">Déja un compte ? <a href="#">Se connecter</a></p>
+        <p class="login-link">Déja un compte ? <a href="/connexion">Se connecter</a></p>
        
     </form>
     
