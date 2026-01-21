@@ -11,6 +11,10 @@ elseif($route === "/inscription"){
 }
 elseif($route === "/connexion"){
     require_once "app/views/connexion.php";
+}elseif($route === "/logout"){
+    require "app/controllers/auth.php";
+    logout();
+    
 }
 else{
     echo "404 Vous etes perdu :(";

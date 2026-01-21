@@ -1,4 +1,9 @@
 <?php
+   if ($_SERVER["REQUEST_METHOD"] == "POST"){
+      require_once  'app/controllers/auth.php';
+      login($_POST["username"]  , $_POST["password"] );
+
+  }
 
 ?>
 
@@ -17,8 +22,8 @@
 
     <form action="#" method="post">
         <div class="form-group">
-            <input type="text" placeholder="Nom d'utilisateur " require >
-            <input type="password" placeholder="Mot de passe " require>
+            <input type="text" name="username" placeholder="Nom d'utilisateur " required>
+            <input type="password" name="password" placeholder="Mot de passe " required>
             <button type="submit">Se connecter</button>
         </div>
         

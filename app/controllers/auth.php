@@ -43,4 +43,58 @@ function register($username , $password1, $password2, $first_name, $last_name, $
     }
 }
 
+
+function login($username, $password){
+    if( isset($username ) && !empty($username) && isset($password ) && !empty($password) ){
+
+        require "app/models/user.php";
+        $user = fetch_user($username);
+        if($user){
+
+            
+            if(password_verify($password, $user["password"])){
+                
+                require "app/models/profil.php";
+
+                $profil = fetch_profil($user["id"]);
+                session_start();
+                $user_info = array("username"=>$username, "first_name"=>$profil["first_name"], 
+                "last_name"=>$profil["last_name"], "avatar"=>$profil["avatar"]);
+
+                $_SESSION["user_info"]= $user_info;
+                update_last_login($username);
+                header("location:/");
+
+
+
+
+
+                 echo "<script>alert(' Soyer les bienvenues dans votre espace blog personnel  ')</script>";
+
+            }else{
+
+                 echo "<script>alert('Erreur le nom d\'utilisateur ou le mot de passe est incorrect ')</script>";
+
+            }
+
+        }else{
+             echo "<script>alert('Erreur le nom d\'utilisateur ou le mot de passe est incorrect ')</script>";
+
+        }
+        
+
+    }else{
+         
+        echo "<script>alert('Erreur Tout les  champs sont requis ')</script>";
+    }
+
+}
+function logout(){
+    session_start();
+    session_destroy();
+    session_abort();
+    header("location: /connexion");
+
+}
+
 ?>
