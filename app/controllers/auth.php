@@ -59,7 +59,7 @@ function login($username, $password){
                 $profil = fetch_profil($user["id"]);
                 session_start();
                 $user_info = array("username"=>$username, "first_name"=>$profil["first_name"], 
-                "last_name"=>$profil["last_name"], "avatar"=>$profil["avatar"], "born_date"=>$profil["born_date"]);
+                "last_name"=>$profil["last_name"], "avatar"=>$profil["avatar"], "born_date"=>$profil["born_date"], "user_id"=>$user["id"]);
 
                 $_SESSION["user_info"]= $user_info;
                 update_last_login($username);

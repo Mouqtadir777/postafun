@@ -196,3 +196,132 @@ label[for="banner"]{
     border-radius: 8px;
     box-shadow: 3px 2px 4px rgb(184, 180, 180);
 }
+
+
+
+.feed {
+    width: 60%;
+    left: auto;
+}
+
+.post-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px; /* 🔥 séparation */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.post-content {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.post-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin: 10px 0;
+}
+
+.post-actions {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #007bff;
+}
+.post-actions span {
+    margin-right: 15px;
+    cursor: pointer;
+}
+.post-actions span:hover {
+    text-decoration: underline;
+}
+.comment-section {
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+.comment {
+    margin-bottom: 10px;
+}
+.comment .comment-author {
+    font-weight: bold;
+    margin-right: 5px;
+}
+.comment .comment-text {
+    font-size: 14px;
+}
+.comment-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+.comment-input:focus {
+    border-color: #007bff;
+    outline: none;
+}   
+ 
+footer{
+    text-align: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+    margin-top: 20px;
+}
+footer p{
+    font-size: 14px;
+    color: #555;
+}   
+footer a{
+    text-decoration: none;
+    color: #007bff;
+}
+footer a:hover{
+    text-decoration: underline;
+}   
+body{
+    font-family: Arial, sans-serif;
+    background-color: #e9ebee;
+    margin: 0;
+    padding: 0;
+}
+.comments{
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+.comment-card{
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px; /* 🔥 séparation */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    width: 300px;
+}
+.comment-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+.comment-content{
+    font-size: 14px;
+    color: #333;
+}
+
+
+

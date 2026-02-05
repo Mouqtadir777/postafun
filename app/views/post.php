@@ -1,3 +1,17 @@
+<?php 
+session_start();
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    require_once "app/models/comment.php";
+    comment($_GET["p"],$_SESSION["user_info"]["user_id"], $_POST["content"] );
+
+    header("location:/post?p=".$_GET["p"]);
+
+}
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,11 +64,10 @@
     <div class="post-container">
         <?php
             require_once "app/models/post.php";
-            $posts = fetch_post();
+            $post = show_post($_GET ["p"]);
         ?>
         <div class="feed">
 
-            <?php foreach ($posts as $post): ?>
                 <div class="post-card">
 
                     <div class="post-header">
@@ -76,7 +89,6 @@
                         <div class="post-actions">
                             <a href="/like?id=<?= $post['id'] ?>">❤️ Like</a>
                             <a href="/post?p=<?= $post['id'] ?>">💬 Commenter</a>
-
                         </div>
                     <?php endif ?>
 
@@ -84,8 +96,38 @@
 
 
                 </div>
-            <?php endforeach; ?>
 
+        </div>
+        <hr>
+         <div class="post-creation">
+            <form action="" method="post">
+                <div class="field">
+                    <textarea name="content" id="content" placeholder="Contenu du post"></textarea>
+                </div>
+                <div class="validation">
+                    
+                    <input type="submit" value="commenter">
+                </div>
+            </form>
+        </div>
+        <div class="comments">
+            <?php 
+                 require_once "app/models/comment.php";
+                 $comments = fetch_comment($post["id"]);?>
+            <?php foreach( $comments as $comment) :?>
+                <div class="comment-card">
+
+                    <div class="comment-header">
+                        <strong><?= htmlspecialchars($comment['username']) ?></strong>
+                        <span class="date"><?= $comment['created_at'] ?></span>
+                    </div>
+
+                    <div class="comment-content">
+                        <p><?= nl2br(htmlspecialchars($comment['content'] ?? '')) ?></p>
+                    </div>
+
+                </div>
+            <?php endforeach ?>
         </div>
 
     </div>
